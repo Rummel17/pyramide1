@@ -70,8 +70,8 @@ li div.item {
   height: 37.5px;
 }
 #remove-block span {
-  background-color: #BEC6C6;
-  color: #222;
+  background-color: #0488e0;
+  color: #fff;
 }
 input:focus {
   background: rgba(255, 255, 255, .95);
