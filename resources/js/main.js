@@ -36,12 +36,11 @@ $(document).ready(function() {
       }
     });
     console.log(sortedNumbers);
-
+    //This will do the trick, but I cannot include it in the pyramid correctly)
     // var test = document.querySelector('.pyramid').innerHTML = sortedNumbers.map(val => `<span class="values">${val}</span>`).join('');
     var $number = $('<li class="entry"><div class="item" style="width:' + plus + 'px; border-bottom: 60px solid ' + resultColor + ' ;"><span class="values">' + blockNumber + '</span></div></li>');
     $('.pyramid').append($number);
     // console.log(test);
-
 
   });
 
