@@ -4,15 +4,7 @@ $(document).ready(function() {
 
 
   $('#add-block .button').click(function() {
-    //determin widht of last div
-    var lastwidth = $('.pyramid li:last-child .item').width();
 
-    //calculation of next div
-    if (lastwidth == null) {
-      var plus = 90;
-    } else {
-      var plus = lastwidth + 190; //not sure why 190 but with this value they line up smoothly. Was expecting 0 and 100 for the values.
-    }
     //create radom color
     function randColor() {
       var colors = ["green", "yellowgreen", "Chocolate", "goldenrod", "cadetblue", "firebrick", "magenta", "LightSeaGreen", "Peru", "Sienna", "SlateBlue", "Snow", "Tan", "Skyblue"];
@@ -36,11 +28,32 @@ $(document).ready(function() {
       }
     });
     console.log(sortedNumbers);
+
+    var empty = document.getElementById("empty");
+    while (empty.firstChild) {
+    empty.removeChild(empty.firstChild);
+    }
     //This will do the trick, but I cannot include it in the pyramid correctly)
     // var test = document.querySelector('.pyramid').innerHTML = sortedNumbers.map(val => `<span class="values">${val}</span>`).join('');
+    values.forEach(function(element){
+
+      //determin widht of last div
+      var lastwidth = $('.pyramid li:last-child .item').width();
+
+      //calculation of next div
+      if (lastwidth == null) {
+        var plus = 90;
+      } else {
+        var plus = lastwidth + 190; //not sure why 190 but with this value they line up smoothly. Was expecting 0 and 100 for the values.
+      }
+
+
     var $number = $('<li class="entry"><div class="item" style="width:' + plus + 'px; border-bottom: 60px solid ' + resultColor + ' ;"><span class="values">' + blockNumber + '</span></div></li>');
     $('.pyramid').append($number);
+      })
     // console.log(test);
+
+
 
   });
 
