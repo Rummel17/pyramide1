@@ -21,8 +21,6 @@ $(document).ready(function() {
     empty.removeChild(empty.firstChild);
     }
 
-    //This will do the trick, but I cannot include it in the pyramid correctly)
-    // var test = document.querySelector('.pyramid').innerHTML = sortedNumbers.map(val => `<span class="values">${val}</span>`).join('');
     sortedNumbers.forEach(function(element){
 
       //determin widht of last div
@@ -39,19 +37,14 @@ $(document).ready(function() {
       function randColor() {
         var colors = ["green", "yellowgreen", "Chocolate", "goldenrod", "cadetblue", "firebrick", "magenta", "LightSeaGreen", "Peru", "Sienna", "SlateBlue", "Snow", "Tan", "Skyblue"];
         var color = colors[Math.floor(Math.random() * colors.length)];
-
         return color
       }
 
-      //make color available gloabally
       var resultColor = randColor();
 
       var $number = $('<li class="entry"><div class="item" style="width:' + plus + 'px; border-bottom: 60px solid ' + resultColor + ' ;"><span class="values">' + element + '</span></div></li>');
       $('.pyramid').append($number);
         })
-      // console.log(test);
-
-
 
   });
 
